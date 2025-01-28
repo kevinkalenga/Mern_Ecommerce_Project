@@ -6,6 +6,14 @@ import ProductListPage from './pages/ProductListPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 
+
+import ProtectedRoutesComponent from './pages/components/ProtectedRoutesComponent'
+import UserProfilePage from './pages/user/UserProfilePage';
+import UserOrders from './pages/user/UserOrders';
+import UserCartDetailsPage from './pages/user/UserCartDetailsPage';
+import UserOrderDetailsPage from './pages/user/UserOrderDetailsPage'
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,9 +21,19 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/product-list" element={<ProductListPage />} />
           <Route path="/product-details" element={<ProductDetailsPage />} />
+          <Route path="/product-details/:id" element={<ProductDetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element="Page not exists 404" />
+          
+          <Route element={<ProtectedRoutesComponent />}>
+          
+             <Route path="/user" element={<UserProfilePage />} />
+             <Route path="/user/my-orders" element={<UserOrders />} />
+             <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+             <Route path="/user/order-details" element={<UserOrderDetailsPage />} />
+          </Route>
        </Routes> 
     </BrowserRouter>
     
