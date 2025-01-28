@@ -1,5 +1,10 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
+// components:
+import HeaderComponent from "./pages/components/HeaderComponent";
+import FooterComponent from './pages/components/FooterComponent';
+
+
 // publicly available pages:
 import HomePage from './pages/HomePage'
 import CartPage from './pages/CartPage'
@@ -30,6 +35,7 @@ import AdminCreateProductPage from './pages/admin/AdminCreateProductPage'
 const App = () => {
   return (
     <BrowserRouter>
+       <HeaderComponent />
        <Routes>
            {/* publicly available routes: */}
           <Route path="/" element={<HomePage />} />
@@ -72,6 +78,7 @@ const App = () => {
               <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
           </Route>
        </Routes> 
+       <FooterComponent />
     </BrowserRouter>
     
     
