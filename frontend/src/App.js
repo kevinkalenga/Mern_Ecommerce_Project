@@ -4,6 +4,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import HeaderComponent from "./pages/components/HeaderComponent";
 import FooterComponent from './pages/components/FooterComponent';
 
+// user component:
+import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
 // publicly available pages:
 import HomePage from './pages/HomePage'
@@ -14,7 +16,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 
 
-import ProtectedRoutesComponent from './pages/components/ProtectedRoutesComponent'
+import ProtectedRoutesComponent from './components/ProtectedRoutesComponent'
 // protected user pages:
 import UserProfilePage from './pages/user/UserProfilePage';
 import UserOrders from './pages/user/UserOrders';
@@ -37,16 +39,17 @@ const App = () => {
     <BrowserRouter>
        <HeaderComponent />
        <Routes>
-           {/* publicly available routes: */}
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product-list" element={<ProductListPage />} />
-          <Route path="/product-details" element={<ProductDetailsPage />} />
-          <Route path="/product-details/:id" element={<ProductDetailsPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="*" element="Page not exists 404" />
-          
+           <Route element={<RoutesWithUserChatComponent />}> 
+             {/* publicly available routes: */}
+             <Route path="/" element={<HomePage />} />
+             <Route path="/product-list" element={<ProductListPage />} />
+             <Route path="/product-details" element={<ProductDetailsPage />} />
+             <Route path="/product-details/:id" element={<ProductDetailsPage />} />
+             <Route path="/cart" element={<CartPage />} />
+             <Route path="/login" element={<LoginPage />} />
+             <Route path="/register" element={<RegisterPage />} />
+             <Route path="*" element="Page not exists 404" />
+            </Route>
           {/* user protected routes: */}
           <Route element={<ProtectedRoutesComponent admin={false} />}>
           
