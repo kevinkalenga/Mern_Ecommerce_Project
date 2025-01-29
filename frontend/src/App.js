@@ -1,8 +1,9 @@
+// https://react-bootstrap.github.io/docs/components/accordion
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 // components:
-import HeaderComponent from "./pages/components/HeaderComponent";
-import FooterComponent from './pages/components/FooterComponent';
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from './components/FooterComponent';
 
 // user component:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
