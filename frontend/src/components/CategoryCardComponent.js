@@ -1,16 +1,35 @@
 import { Card, Button } from "react-bootstrap";
+import {LinkContainer} from 'react-router-bootstrap'
 
-const CategoryCardComponent = () => {
+const CategoryCardComponent = ({category, index}) => {
+  
+  const images = [
+    "/images/tablets-category.png",
+    "/images/monitors-category.png",
+    "/images/games-category.png",
+    "/images/tablets-category.png",
+    "/images/tablets-category.png",
+    "/images/tablets-category.png",
+    "/images/tablets-category.png",
+    "/images/tablets-category.png",
+  ];
+  
+  
+  
+  
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="/images/tablets-category.png" />
+    <Card>
+      <Card.Img crossOrigin="anonymous" variant="top" src={images[index]} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{category}</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <LinkContainer to="/product-list">
+           <Button variant="primary">Go to category</Button>
+        </LinkContainer>
+        
       </Card.Body>
     </Card>
   );
