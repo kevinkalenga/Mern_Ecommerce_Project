@@ -13,6 +13,21 @@ const UserChatComponent = () => {
            <h6>Lest's Chat - Online</h6>
 
         </div>
+        <div className="chat-form">
+           <div className="cht-msg">
+              <p>Chat history</p>
+           </div>
+           <textarea 
+              id="clientChatMsg"
+              className="form-control"
+              placeholder="Your Text Message"
+            >
+
+           </textarea>
+           <button className="btn btn-success btn-block">
+             Submit
+           </button>
+        </div>
 
       </div>
     </>
